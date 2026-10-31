@@ -1,0 +1,1621 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Paul-Alexander | Model Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+    <style>
+
+        /* GENERAL SETTINGS */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f7f4ef;
+            color: #222222;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* NAVIGATION BAR */
+
+        header {
+            width: 100%;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f7f4ef;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #e5ded4;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #a47b50;
+        }
+
+
+        /* HERO SECTION */
+
+        .hero {
+            min-height: 650px;
+            padding: 70px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            background-color: #e9e1d7;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text .subtitle {
+            color: #98744e;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(55px, 7vw, 90px);
+            line-height: 1.1;
+            margin: 25px 0;
+        }
+
+        .hero-text p {
+            color: #666;
+            font-size: 15px;
+            max-width: 480px;
+            margin-bottom: 35px;
+        }
+
+        .hero-image {
+            flex: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 530px;
+            object-fit: cover;
+            object-position: center 30%;
+            display: block;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #222;
+            color: white;
+            padding: 15px 32px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #a47b50;
+        }
+
+
+        /* SECTION COMMON STYLING */
+
+        section {
+            padding: 90px 10%;
+        }
+
+        .section-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            color: #888;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+
+        /* ABOUT SECTION */
+
+        .about {
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .about p {
+            color: #666;
+            margin: 18px auto;
+            font-size: 15px;
+        }
+
+        .about .section-title {
+            margin-bottom: 30px;
+        }
+
+
+        /* EXPERIENCE SECTION */
+
+        .experience {
+            background-color: #222;
+            color: white;
+            text-align: center;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .experience-card {
+            padding: 40px 25px;
+            border: 1px solid #555;
+            transition: 0.3s;
+        }
+
+        .experience-card:hover {
+            border-color: #c29b70;
+            transform: translateY(-5px);
+        }
+
+        .experience-card h3 {
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .experience-card p {
+            color: #bbb;
+            font-size: 13px;
+        }
+
+        .experience-card span {
+            display: block;
+            color: #c29b70;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+
+        /* PORTFOLIO GALLERY */
+
+        .portfolio {
+            text-align: center;
+        }
+
+        .portfolio > p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px 34px;
+            margin: 34px auto 0;
+            padding: 18px 0;
+            border-top: 1px solid #e5ded4;
+            border-bottom: 1px solid #e5ded4;
+            max-width: 980px;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        .stats strong {
+            color: #222;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        .filters button {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 11px 20px;
+            border: 1px solid #222;
+            background: transparent;
+            color: #222;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .filters button:hover,
+        .filters button.active {
+            background: #222;
+            color: #fff;
+        }
+
+        .gallery-group {
+            margin-top: 55px;
+        }
+
+        .gallery-group[hidden] {
+            display: none;
+        }
+
+        .gallery-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 20px;
+            text-align: left;
+            border-bottom: 1px solid #222;
+            padding-bottom: 12px;
+        }
+
+        .gallery-head h3 {
+            font-size: 30px;
+        }
+
+        .gallery-head p {
+            color: #888;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-align: right;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            background-color: #e8e1d8;
+            cursor: zoom-in;
+            border: 0;
+            padding: 0;
+            display: block;
+            width: 100%;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.04);
+        }
+
+        /* LIGHTBOX */
+
+        @media screen and (min-width: 769px) and (max-width: 1100px) {
+
+            .journal-grid {
+                column-count: 3;
+            }
+
+            .frames-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(20, 18, 16, 0.94);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 30px;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 88vh;
+            object-fit: contain;
+            display: block;
+        }
+
+        .lightbox button {
+            position: absolute;
+            background: none;
+            border: 0;
+            color: #fff;
+            font-size: 34px;
+            cursor: pointer;
+            padding: 10px 18px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .lb-close { top: 14px; right: 18px; }
+        .lb-prev { left: 10px; top: 50%; transform: translateY(-50%); }
+        .lb-next { right: 10px; top: 50%; transform: translateY(-50%); }
+
+
+
+        /* MY WORLD */
+
+        .world {
+            background-color: #e9e1d7;
+        }
+
+        .world-intro {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 60px;
+        }
+
+        .world-intro p {
+            color: #666;
+            font-size: 15px;
+            margin-top: 18px;
+        }
+
+        .world-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 70px;
+        }
+
+        .world-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .world-row.reverse .world-media {
+            order: 2;
+        }
+
+        .world-media img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            display: block;
+        }
+
+        .world-text span {
+            display: block;
+            color: #a47b50;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .world-text h3 {
+            font-size: 36px;
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .world-text p {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 14px;
+        }
+
+        .world-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .world-tags li {
+            list-style: none;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 7px 12px;
+            border: 1px solid #c9b8a3;
+            color: #6b5a47;
+        }
+
+
+        /* BEHIND THE FRAMES */
+
+        .frames {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+        }
+
+        .frames > p {
+            color: #bbb;
+            font-size: 15px;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .frames-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 50px;
+            text-align: left;
+        }
+
+        .frame-card {
+            border: 1px solid #555;
+            transition: 0.3s;
+        }
+
+        .frame-card:hover {
+            border-color: #c29b70;
+            transform: translateY(-5px);
+        }
+
+        .frame-card img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            display: block;
+        }
+
+        .frame-card div {
+            padding: 24px 22px 28px;
+        }
+
+        .frame-card span {
+            color: #c29b70;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .frame-card h3 {
+            font-size: 24px;
+            margin: 8px 0 10px;
+        }
+
+        .frame-card p {
+            color: #bbb;
+            font-size: 13px;
+        }
+
+
+        /* JOURNAL (ARCHIVE) */
+
+        .journal {
+            text-align: center;
+        }
+
+        .journal > p {
+            color: #666;
+            font-size: 15px;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .journal-grid {
+            column-count: 4;
+            column-gap: 16px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .journal-item {
+            break-inside: avoid;
+            margin-bottom: 16px;
+            position: relative;
+            overflow: hidden;
+            background: #e8e1d8;
+            cursor: zoom-in;
+            display: block;
+            width: 100%;
+            border: 0;
+            padding: 0;
+        }
+
+        .journal-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .journal-item:hover img {
+            transform: scale(1.04);
+        }
+
+        .journal-item figcaption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 30px 14px 12px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .journal-item:hover figcaption,
+        .journal-item:focus-visible figcaption {
+            opacity: 1;
+        }
+
+        .journal-count {
+            margin-top: 18px;
+            color: #888;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .journal-more {
+            margin-top: 30px;
+            border: 0;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .lb-caption {
+            position: absolute;
+            bottom: 18px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* MODELING GOALS */
+
+        .goal {
+            background-color: #e9e1d7;
+            text-align: center;
+        }
+
+        .goal-content {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .goal p {
+            color: #666;
+            font-size: 16px;
+            margin: 20px 0 30px;
+        }
+
+
+        /* CONTACT SECTION */
+
+        .contact {
+            text-align: center;
+            background-color: #f7f4ef;
+        }
+
+        .contact p {
+            color: #666;
+            margin: 15px 0;
+        }
+
+        .contact-details {
+            margin: 35px 0;
+        }
+
+        .contact-details a {
+            color: #98744e;
+            transition: 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: #222;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: #222;
+            color: #aaa;
+            text-align: center;
+            padding: 30px 15px;
+            font-size: 12px;
+        }
+
+        footer span {
+            color: #c29b70;
+        }
+
+
+        /* RESPONSIVE DESIGN */
+
+        @media screen and (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 10px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 7%;
+                gap: 35px;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-image img {
+                height: 450px;
+            }
+
+            section {
+                padding: 65px 7%;
+            }
+
+            .section-title {
+                font-size: 38px;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .world-row {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .world-row.reverse .world-media {
+                order: 0;
+            }
+
+            .world-text h3 {
+                font-size: 30px;
+            }
+
+            .frames-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journal-grid {
+                column-count: 2;
+                column-gap: 10px;
+            }
+
+            .journal-item {
+                margin-bottom: 10px;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .gallery-head {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .gallery-head p {
+                text-align: left;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 55px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <header>
+
+        <div class="logo">
+            PAUL-ALEXANDER
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#world">My World</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#frames">Stories</a>
+            <a href="#journal">Journal</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+
+    <!-- HERO / HOME SECTION -->
+
+    <div class="hero" id="home">
+
+        <div class="hero-text">
+
+            <div class="subtitle">
+                Fashion & Commercial Model
+            </div>
+
+            <h1>
+                Paul-<br>Alexander.
+            </h1>
+
+            <p>
+                Bringing confidence, creativity, and versatility
+                to every frame. Passionate about fashion,
+                photography, and creative collaborations.
+            </p>
+
+            <a href="#portfolio" class="button">
+                Explore My Portfolio
+            </a>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <img
+                src="images/main-model.jpg"
+                alt="Paul-Alexander, studio portrait in a white t-shirt">
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ABOUT ME SECTION -->
+
+    <section id="about">
+
+        <div class="about">
+
+            <div class="section-subtitle">
+                Get To Know Me
+            </div>
+
+            <h2 class="section-title">
+                About Me
+            </h2>
+
+            <p>
+                My name is Paul-Alexander, and I am a model
+                passionate about fashion and commercial modeling.
+                I am willing to work with various brands,
+                photographers, designers, and creative teams.
+            </p>
+
+            <p>
+                My portfolio showcases my versatility and range
+                as a model. I enjoy exploring different looks
+                and styles, from high fashion to lifestyle.
+            </p>
+
+            <p>
+                I have experience in runway, print, and
+                commercial modeling. I am always looking for
+                new opportunities to collaborate and grow
+                as a model.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MY WORLD SECTION -->
+
+    <section class="world" id="world">
+
+        <div class="world-intro">
+
+            <div class="section-subtitle">
+                Beyond The Camera
+            </div>
+
+            <h2 class="section-title">
+                My World
+            </h2>
+
+            <p>
+                At 1.99 m I am usually the tallest person in the room,
+                but what people remember is what I bring with me:
+                manga under my arm, a new word in another language,
+                and the energy of someone who trains every day.
+                These are the things that shape how I move,
+                how I pose and how I tell a story in front of the lens.
+            </p>
+
+        </div>
+
+        <div class="world-row">
+
+            <div class="world-media">
+                <img src="images/world/anime.jpg" alt="Paul-Alexander in a black tee against a white wall, hands raised in an anime-style pose" loading="lazy">
+            </div>
+
+            <div class="world-text">
+                <span>01 — Anime &amp; Manga</span>
+                <h3>Characters taught me how to pose</h3>
+                    <p>
+                        I grew up with Naruto, Bleach, Gintama and Slam Dunk. What fascinates me is how a mangaka can tell everything with one drawing: a coat caught in the wind, a half-smile, a hand in a pocket.
+                    </p>
+                    <p>
+                        That is what I try to bring on set: a clear attitude, a silhouette you can read at a glance, and a touch of playfulness. Cosplay, drawing my favourite characters and streaming games are part of the same passion.
+                    </p>
+                <ul class="world-tags"><li>Bleach</li><li>Naruto</li><li>Jujutsu Kaisen</li><li>Gintama</li><li>Cosplay</li><li>Gaming</li></ul>
+            </div>
+
+        </div>
+
+        <div class="world-row reverse">
+
+            <div class="world-media">
+                <img src="images/world/languages.jpg" alt="Paul-Alexander in London’s Chinatown at night" loading="lazy">
+            </div>
+
+            <div class="world-text">
+                <span>02 — Languages</span>
+                <h3>Seven languages, one curiosity</h3>
+                    <p>
+                        French is my mother tongue. I also speak English, Polish, Mandarin Chinese, German, Spanish and Japanese, and I am starting Korean.
+                    </p>
+                    <p>
+                        Every language changes the way you joke, listen and look at people. On a shoot, it means I can work easily with international teams, and travel has given me the habit of feeling at home almost anywhere.
+                    </p>
+                <ul class="world-tags"><li>Français</li><li>English</li><li>Polski</li><li>中文</li><li>Deutsch</li><li>Español</li><li>日本語</li><li>한국어</li></ul>
+            </div>
+
+        </div>
+
+        <div class="world-row">
+
+            <div class="world-media">
+                <img src="images/world/martial.jpg" alt="Paul-Alexander training martial arts in a dojo" loading="lazy">
+            </div>
+
+            <div class="world-text">
+                <span>03 — Sport &amp; Martial Arts</span>
+                <h3>Discipline you can see in a pose</h3>
+                    <p>
+                        Boxing, MMA, nunchaku, basketball, sprinting and swimming: I need movement in my life.
+                    </p>
+                    <p>
+                        Martial arts in particular taught me balance, control and how to hold a position with intention. Those are exactly the skills a photographer needs from a model, whether it is a still portrait or an action shot for a sports brand.
+                    </p>
+                <ul class="world-tags"><li>Boxing</li><li>MMA</li><li>Nunchaku</li><li>Basketball</li><li>Sprint</li><li>Swimming</li></ul>
+            </div>
+
+        </div>
+
+        <div class="world-row reverse">
+
+            <div class="world-media">
+                <img src="images/world/fitness.jpg" alt="Paul-Alexander on a hilltop above a lake" loading="lazy">
+            </div>
+
+            <div class="world-text">
+                <span>04 — Health &amp; Fitness</span>
+                <h3>My body is part of the job</h3>
+                    <p>
+                        My mornings start with a journal, some reading and a short HIIT session. I train with consistency, eat well and protect my sleep.
+                    </p>
+                    <p>
+                        Long hikes and time outdoors keep me balanced. For a brand, it means you work with someone reliable, energetic and camera-ready.
+                    </p>
+                <ul class="world-tags"><li>HIIT</li><li>Strength</li><li>Hiking</li><li>Routine</li><li>Sleep</li></ul>
+            </div>
+
+        </div>
+
+        <div class="world-row">
+
+            <div class="world-media">
+                <img src="images/world/art.jpg" alt="Paul-Alexander in a museum next to a classical sculpture" loading="lazy">
+            </div>
+
+            <div class="world-text">
+                <span>05 — Art</span>
+                <h3>I see the world in frames</h3>
+                    <p>
+                        Before modelling, I studied art. I still draw and paint, and I spend a lot of time in museums looking at how classical painters and sculptors placed light and bodies.
+                    </p>
+                    <p>
+                        That eye for composition helps me understand what a photographer is building, and it is why I love street art, festivals of light and any place where colour becomes a scene.
+                    </p>
+                <ul class="world-tags"><li>Drawing</li><li>Painting</li><li>Museums</li><li>Street art</li><li>Light</li></ul>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- EXPERIENCE SECTION -->
+
+    <section class="experience" id="experience">
+
+        <div class="section-subtitle">
+            What I Do
+        </div>
+
+        <h2 class="section-title">
+            Modeling Experience
+        </h2>
+
+
+        <div class="experience-grid">
+
+            <div class="experience-card">
+
+                <span>01</span>
+
+                <h3>Runway Modeling</h3>
+
+                <p>
+                    Fashion shows, runway presentations,
+                    and designer collections.
+                </p>
+
+            </div>
+
+
+            <div class="experience-card">
+
+                <span>02</span>
+
+                <h3>Print Modeling</h3>
+
+                <p>
+                    Fashion editorials, magazine shoots,
+                    and professional photography.
+                </p>
+
+            </div>
+
+
+            <div class="experience-card">
+
+                <span>03</span>
+
+                <h3>Commercial Modeling</h3>
+
+                <p>
+                    Advertising campaigns, brand promotions,
+                    and lifestyle photography.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PORTFOLIO SECTION -->
+
+    <section class="portfolio" id="portfolio">
+
+        <div class="section-subtitle">
+            Selected Photography
+        </div>
+
+        <h2 class="section-title">
+            My Portfolio
+        </h2>
+
+        <p>
+            Digitals, editorial looks, lifestyle and street:
+            the range a brand or creator can expect on set.
+        </p>
+
+
+        <div class="stats">
+            <span>Height<strong>199 cm · 6′6″</strong></span>
+            <span>Chest<strong>99 cm</strong></span>
+            <span>Waist<strong>81 cm</strong></span>
+            <span>Hips<strong>90 cm</strong></span>
+            <span>Inseam<strong>86 cm</strong></span>
+            <span>Shoes<strong>EU 45</strong></span>
+            <span>Eyes<strong>Dark green</strong></span>
+            <span>Based in<strong>Lyon, France</strong></span>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter the portfolio">
+            <button type="button" class="active" data-filter="all">All</button>
+            <button type="button" data-filter="digitals">Digitals</button>
+            <button type="button" data-filter="editorial">Editorial</button>
+            <button type="button" data-filter="lifestyle">Lifestyle &amp; Travel</button>
+            <button type="button" data-filter="street">Street &amp; Movement</button>
+        </div>
+
+        <div class="gallery-group" data-group="digitals">
+
+            <div class="gallery-head">
+                <h3>Digitals</h3>
+                <p>Natural, no retouching · face, profile, three-quarters</p>
+            </div>
+
+            <div class="gallery">
+                <button class="gallery-item" type="button" data-full="images/portfolio/digitals/digitals-01.jpg">
+                    <img src="images/portfolio/digitals/digitals-01.jpg" alt="Paul-Alexander — Black and white studio portrait, front" loading="lazy" style="object-position: center 30%;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/digitals/digitals-02.jpg">
+                    <img src="images/portfolio/digitals/digitals-02.jpg" alt="Paul-Alexander — Black and white studio portrait, profile" loading="lazy" style="object-position: center 30%;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/digitals/digitals-03.jpg">
+                    <img src="images/portfolio/digitals/digitals-03.jpg" alt="Paul-Alexander — Studio portrait, three-quarter view" loading="lazy" style="object-position: center 30%;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/digitals/digitals-04.jpg">
+                    <img src="images/portfolio/digitals/digitals-04.jpg" alt="Paul-Alexander — Close-up profile, natural light" loading="lazy" style="object-position: center;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/digitals/digitals-05.jpg">
+                    <img src="images/portfolio/digitals/digitals-05.jpg" alt="Paul-Alexander — Soft natural-light portrait" loading="lazy" style="object-position: center 30%;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/digitals/digitals-06.jpg">
+                    <img src="images/portfolio/digitals/digitals-06.jpg" alt="Paul-Alexander — Outdoor headshot, natural light" loading="lazy" style="object-position: center 30%;">
+                </button>
+            </div>
+
+        </div>
+
+        <div class="gallery-group" data-group="editorial">
+
+            <div class="gallery-head">
+                <h3>Editorial</h3>
+                <p>Character, styling and light</p>
+            </div>
+
+            <div class="gallery">
+                <button class="gallery-item" type="button" data-full="images/portfolio/editorial/editorial-01.jpg">
+                    <img src="images/portfolio/editorial/editorial-01.jpg" alt="Paul-Alexander — Green blazer and red tie, playful pose" loading="lazy" style="object-position: center 25%;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/editorial/editorial-02.jpg">
+                    <img src="images/portfolio/editorial/editorial-02.jpg" alt="Paul-Alexander — Green waistcoat and red tie, three-quarter portrait" loading="lazy" style="object-position: center 30%;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/editorial/editorial-03.jpg">
+                    <img src="images/portfolio/editorial/editorial-03.jpg" alt="Paul-Alexander — Red scarf under red lights at night" loading="lazy" style="object-position: 38% center;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/editorial/editorial-04.jpg">
+                    <img src="images/portfolio/editorial/editorial-04.jpg" alt="Paul-Alexander — Portrait in front of a colourful light installation" loading="lazy" style="object-position: center 30%;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/editorial/editorial-05.jpg">
+                    <img src="images/portfolio/editorial/editorial-05.jpg" alt="Paul-Alexander — Portrait in front of a colourful light installation, looking away" loading="lazy" style="object-position: center 30%;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/editorial/editorial-06.jpg">
+                    <img src="images/portfolio/editorial/editorial-06.jpg" alt="Paul-Alexander — Plaid overshirt with the New York skyline behind" loading="lazy" style="object-position: center;">
+                </button>
+            </div>
+
+        </div>
+
+        <div class="gallery-group" data-group="lifestyle">
+
+            <div class="gallery-head">
+                <h3>Lifestyle & Travel</h3>
+                <p>Outdoors, travel and outerwear</p>
+            </div>
+
+            <div class="gallery">
+                <button class="gallery-item" type="button" data-full="images/portfolio/lifestyle/lifestyle-01.jpg">
+                    <img src="images/portfolio/lifestyle/lifestyle-01.jpg" alt="Paul-Alexander — Lake and blue sky, dark coat, arms crossed" loading="lazy" style="object-position: center 35%;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/lifestyle/lifestyle-02.jpg">
+                    <img src="images/portfolio/lifestyle/lifestyle-02.jpg" alt="Paul-Alexander — Hilltop above a lake in a winter jacket" loading="lazy" style="object-position: center 40%;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/lifestyle/lifestyle-03.jpg">
+                    <img src="images/portfolio/lifestyle/lifestyle-03.jpg" alt="Paul-Alexander — Backlit under a stone archway" loading="lazy" style="object-position: center;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/lifestyle/lifestyle-04.jpg">
+                    <img src="images/portfolio/lifestyle/lifestyle-04.jpg" alt="Paul-Alexander — Seaside terrace, arms crossed" loading="lazy" style="object-position: center 35%;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/lifestyle/lifestyle-05.jpg">
+                    <img src="images/portfolio/lifestyle/lifestyle-05.jpg" alt="Paul-Alexander — Black outfit under cherry blossoms" loading="lazy" style="object-position: center 40%;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/lifestyle/lifestyle-06.jpg">
+                    <img src="images/portfolio/lifestyle/lifestyle-06.jpg" alt="Paul-Alexander — Calanque coastline in summer" loading="lazy" style="object-position: 62% center;">
+                </button>
+            </div>
+
+        </div>
+
+        <div class="gallery-group" data-group="street">
+
+            <div class="gallery-head">
+                <h3>Street & Movement</h3>
+                <p>City, attitude and sport</p>
+            </div>
+
+            <div class="gallery">
+                <button class="gallery-item" type="button" data-full="images/portfolio/street/street-01.jpg">
+                    <img src="images/portfolio/street/street-01.jpg" alt="Paul-Alexander — White shirt leaning on a white limousine at night" loading="lazy" style="object-position: 45% center;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/street/street-02.jpg">
+                    <img src="images/portfolio/street/street-02.jpg" alt="Paul-Alexander — Full look against an old stone wall" loading="lazy" style="object-position: center;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/street/street-03.jpg">
+                    <img src="images/portfolio/street/street-03.jpg" alt="Paul-Alexander — Martial arts training in a dojo" loading="lazy" style="object-position: 78% center;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/street/street-04.jpg">
+                    <img src="images/portfolio/street/street-04.jpg" alt="Paul-Alexander — Museum visit in front of a painting" loading="lazy" style="object-position: center 40%;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/street/street-05.jpg">
+                    <img src="images/portfolio/street/street-05.jpg" alt="Paul-Alexander — Waterfront with the city skyline" loading="lazy" style="object-position: 30% center;">
+                </button>
+                <button class="gallery-item" type="button" data-full="images/portfolio/street/street-06.jpg">
+                    <img src="images/portfolio/street/street-06.jpg" alt="Paul-Alexander — Walking away down a tree-lined boulevard" loading="lazy" style="object-position: center;">
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- BEHIND THE FRAMES SECTION -->
+
+    <section class="frames" id="frames">
+
+        <div class="section-subtitle">
+            Behind The Frames
+        </div>
+
+        <h2 class="section-title">
+            The Stories
+        </h2>
+
+        <p>
+            A picture is never only a picture. Here is why I chose
+            some of these images and where the inspiration came from.
+        </p>
+
+        <div class="frames-grid">
+
+            <article class="frame-card">
+                <img src="images/world/bf-blazer.jpg" alt="Paul-Alexander — Green blazer, collar up" loading="lazy">
+                <div>
+                    <span>The Uniform</span>
+                    <h3>Green blazer, collar up</h3>
+                    <p>Inspired by the school uniforms of the anime I grew up with. Pulling the collar up turned a simple blazer into a shōnen hero entrance: theatrical, a bit cheeky, very me.</p>
+                </div>
+            </article>
+
+            <article class="frame-card">
+                <img src="images/world/bf-studio.jpg" alt="Paul-Alexander — Black and white, no filter" loading="lazy">
+                <div>
+                    <span>The Honest One</span>
+                    <h3>Black and white, no filter</h3>
+                    <p>Every model needs one picture with nothing to hide behind. White t-shirt, grey wall, natural hair: this is the face a brand will actually work with.</p>
+                </div>
+            </article>
+
+            <article class="frame-card">
+                <img src="images/world/bf-light.jpg" alt="Paul-Alexander — Standing inside the light" loading="lazy">
+                <div>
+                    <span>The Colour</span>
+                    <h3>Standing inside the light</h3>
+                    <p>I love places where light becomes art. Here I let the installation do the work and kept the pose still, the way a character stands in a key frame.</p>
+                </div>
+            </article>
+
+            <article class="frame-card">
+                <img src="images/world/bf-nyc.jpg" alt="Paul-Alexander — New York behind me" loading="lazy">
+                <div>
+                    <span>The City</span>
+                    <h3>New York behind me</h3>
+                    <p>My year in the United States taught me to feel at home anywhere. A plaid overshirt, the wind and the skyline: the image of a new chapter.</p>
+                </div>
+            </article>
+
+            <article class="frame-card">
+                <img src="images/world/bf-dojo.jpg" alt="Paul-Alexander — In the dojo" loading="lazy">
+                <div>
+                    <span>The Discipline</span>
+                    <h3>In the dojo</h3>
+                    <p>Martial arts are where I learned to control my body. That control is what lets me hold a pose, repeat a movement and stay precise on set.</p>
+                </div>
+            </article>
+
+            <article class="frame-card">
+                <img src="images/world/bf-arch.jpg" alt="Paul-Alexander — Backlit under an archway" loading="lazy">
+                <div>
+                    <span>The Silhouette</span>
+                    <h3>Backlit under an archway</h3>
+                    <p>Sometimes the story is told by the light, not the face. Like a manga panel in black and white, the shape alone says where the character is going.</p>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- JOURNAL SECTION -->
+
+    <section class="journal" id="journal">
+
+        <div class="section-subtitle">
+            The Archive
+        </div>
+
+        <h2 class="section-title">
+            Journal
+        </h2>
+
+        <p>
+            More than a hundred moments: portraits, travels, cities,
+            art, sport and the anime side of me.
+        </p>
+
+        <div class="filters journal-filters" role="group" aria-label="Filter the journal">
+            <button type="button" class="active" data-jfilter="all">All</button>
+            <button type="button" data-jfilter="portraits">Portraits</button>
+            <button type="button" data-jfilter="travel">Travel</button>
+            <button type="button" data-jfilter="city">City</button>
+            <button type="button" data-jfilter="art">Art &amp; Culture</button>
+            <button type="button" data-jfilter="sport">Sport</button>
+            <button type="button" data-jfilter="anime">Anime</button>
+            <button type="button" data-jfilter="everyday">Everyday</button>
+        </div>
+
+        <div class="journal-grid" id="journal-grid"></div>
+
+        <p class="journal-count" id="journal-count"></p>
+
+        <button type="button" class="button journal-more" id="journal-more">
+            Show More
+        </button>
+
+    </section>
+
+
+
+    <!-- GOAL SECTION -->
+
+    <section class="goal">
+
+        <div class="goal-content">
+
+            <div class="section-subtitle">
+                My Vision
+            </div>
+
+            <h2 class="section-title">
+                My Goals
+            </h2>
+
+            <p>
+                My goal is to become a successful model,
+                work with inspiring brands and photographers,
+                continue developing my skills, and make
+                a positive impact in the fashion industry.
+            </p>
+
+            <a href="#contact" class="button">
+                Let's Collaborate
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTACT SECTION -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-subtitle">
+            Get In Touch
+        </div>
+
+        <h2 class="section-title">
+            Let's Work Together
+        </h2>
+
+        <p>
+            Interested in working with me?
+            I would love to hear about your project.
+        </p>
+
+
+        <div class="contact-details">
+
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:paul.genos@gmail.com">
+                    paul.genos@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <strong>Instagram:</strong>
+                <a href="https://www.instagram.com/paul_genos/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    @paul_genos
+                </a>
+            </p>
+
+        </div>
+
+
+        <a href="mailto:paul.genos@gmail.com"
+           class="button">
+            Contact Me
+        </a>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Paul-Alexander.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Designed with <span>♥</span> for Fashion & Creativity.
+        </p>
+
+    </footer>
+
+
+    <!-- LIGHTBOX -->
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lb-close" type="button" aria-label="Close">&times;</button>
+        <button class="lb-prev" type="button" aria-label="Previous photo">&#8249;</button>
+        <img src="" alt="">
+        <button class="lb-next" type="button" aria-label="Next photo">&#8250;</button>
+        <p class="lb-caption"></p>
+    </div>
+
+
+    <script src="gallery-data.js"></script>
+
+    <script>
+        (function () {
+
+            /* ---------- LIGHTBOX (shared) ---------- */
+
+            var lb = document.getElementById('lightbox');
+            var lbImg = lb.querySelector('img');
+            var lbCap = lb.querySelector('.lb-caption');
+            var list = [];
+            var current = 0;
+
+            function show(i) {
+                current = (i + list.length) % list.length;
+                lbImg.src = list[current].src;
+                lbImg.alt = list[current].alt;
+                lbCap.textContent = list[current].caption + '  ·  ' + (current + 1) + ' / ' + list.length;
+            }
+
+            function openLightbox(items, index) {
+                list = items;
+                show(index);
+                lb.classList.add('open');
+                lb.setAttribute('aria-hidden', 'false');
+            }
+
+            function close() {
+                lb.classList.remove('open');
+                lb.setAttribute('aria-hidden', 'true');
+            }
+
+            lb.querySelector('.lb-close').addEventListener('click', close);
+            lb.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(current - 1); });
+            lb.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(current + 1); });
+            lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+
+            document.addEventListener('keydown', function (e) {
+                if (!lb.classList.contains('open')) return;
+                if (e.key === 'Escape') close();
+                if (e.key === 'ArrowLeft') show(current - 1);
+                if (e.key === 'ArrowRight') show(current + 1);
+            });
+
+
+            /* ---------- PORTFOLIO FILTERS ---------- */
+
+            var filterButtons = document.querySelectorAll('.filters button[data-filter]');
+            var groups = document.querySelectorAll('.gallery-group');
+
+            filterButtons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var f = btn.getAttribute('data-filter');
+                    filterButtons.forEach(function (b) { b.classList.toggle('active', b === btn); });
+                    groups.forEach(function (g) {
+                        g.hidden = !(f === 'all' || g.getAttribute('data-group') === f);
+                    });
+                });
+            });
+
+            document.querySelectorAll('.gallery-item').forEach(function (el) {
+                el.addEventListener('click', function () {
+                    var visible = Array.prototype.filter.call(
+                        document.querySelectorAll('.gallery-item'),
+                        function (x) { return !x.closest('.gallery-group').hidden; }
+                    );
+                    var items = visible.map(function (x) {
+                        var alt = x.querySelector('img').alt;
+                        return { src: x.getAttribute('data-full'), alt: alt, caption: alt.replace('Paul-Alexander — ', '') };
+                    });
+                    openLightbox(items, visible.indexOf(el));
+                });
+            });
+
+
+            /* ---------- JOURNAL (data-driven gallery) ---------- */
+
+            var data = window.JOURNAL || [];
+            var grid = document.getElementById('journal-grid');
+            var count = document.getElementById('journal-count');
+            var more = document.getElementById('journal-more');
+            var jButtons = document.querySelectorAll('.journal-filters button');
+            var PAGE = 24;
+            var filter = 'all';
+            var shown = 0;
+
+            function filtered() {
+                return data.filter(function (p) { return filter === 'all' || p.c === filter; });
+            }
+
+            function render(reset) {
+                var items = filtered();
+                if (reset) { grid.innerHTML = ''; shown = 0; }
+                var next = items.slice(shown, shown + PAGE);
+                next.forEach(function (p, k) {
+                    var idx = shown + k;
+                    var fig = document.createElement('figure');
+                    fig.className = 'journal-item';
+                    fig.tabIndex = 0;
+                    fig.innerHTML = '<img src="images/journal/thumbs/' + p.f + '" width="' + p.w + '" height="' + p.h +
+                        '" loading="lazy" alt="Paul-Alexander journal — ' + p.t + '"><figcaption>' + p.t + '</figcaption>';
+                    function open() {
+                        openLightbox(items.map(function (q) {
+                            return { src: 'images/journal/full/' + q.f, alt: 'Paul-Alexander journal — ' + q.t, caption: q.t };
+                        }), idx);
+                    }
+                    fig.addEventListener('click', open);
+                    fig.addEventListener('keydown', function (e) { if (e.key === 'Enter') open(); });
+                    grid.appendChild(fig);
+                });
+                shown += next.length;
+                count.textContent = shown + ' of ' + items.length + ' photos';
+                more.style.display = shown < items.length ? 'inline-block' : 'none';
+            }
+
+            jButtons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    filter = btn.getAttribute('data-jfilter');
+                    jButtons.forEach(function (b) { b.classList.toggle('active', b === btn); });
+                    render(true);
+                });
+            });
+
+            more.addEventListener('click', function () { render(false); });
+
+            render(true);
+
+        })();
+    </script>
+
+
+</body>
+</html>
